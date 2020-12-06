@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>个人leet code练习</title>
+        <script src="./src/index.js" ></script>
+        <link href="./src/index.css"  type='text/css'  rel='stylesheet'/>
+    </head>
+    <body>
+
+        <div class="page">
+            <div class="header">(1)最富有客户的资产总量</div>
+            <div class="address">https://leetcode-cn.com/problems/richest-customer-wealth/</div>
+            <div class="detail">
+                给你一个 m x n 的整数网格 accounts ，其中 accounts[i][j] 是第 i​​​​​​​​​​​​ 位客户在第 j 家银行托管的资产数量。返回最富有客户所拥有的 资产总量 。0
+    客户的 资产总量 就是他们在各家银行托管的资产数量之和。最富有客户就是 资产总量 最大的客户。
+            </div>
+
+            <div class="detail">
+                输入：accounts = [[1,2,3],[3,2,1]]
+                输出：6
+                解释：
+                第 1 位客户的资产总量 = 1 + 2 + 3 = 6
+                第 2 位客户的资产总量 = 3 + 2 + 1 = 6
+                两位客户都是最富有的，资产总量都是 6 ，所以返回 6 。
+            </div>
+
+            <div class="tip">查看源码可看题解</div>
+        </div>
+
+        <script>
+            const accounts = [[2,8,7],[7,1,3],[1,9,5]] // 17
+            // 最简洁写法
+            var maximumWealth = function(accounts) {
+                return Math.max( ...accounts.map( (item)=> { 
+                    return item.reduce(function(total, num){return total+num })
+                }))
+            };
+
+            // 效率最高写法
+            var maximumWealthQuick = function(accounts) {
+                var maxValue = 0;
+                for( var i=0; i<accounts.length; i++ ){
+                    var sum = 0
+                    for( var j=0; j<accounts[i].length; j++){
+                        sum += accounts[i][j];
+                    }
+                    if( sum > maxValue){
+                        maxValue = sum;
+                    }
+                }
+                return sum
+            };
+
+            // alert(maximumWealth(accounts));
+
+        </script>
+     
+    </body>
+</html>

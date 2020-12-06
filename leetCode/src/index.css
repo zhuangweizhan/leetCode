@@ -1,0 +1,42 @@
+.page{
+    width: 720px;
+    margin: 80px auto 0;
+}
+.header{
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.address{
+    font-size: 22px;
+    color: #8f8e8e;
+    text-align: center;
+}
+.detail{
+    font-size: 18px;
+    margin-top: 15px;
+}
+.tip{
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-top: 50px;
+}
+.foot{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 25px 0;
+    background-color: #bfd6e8;
+    color: #843838;
+    font-size:18px;
+}
+.f_title{
+    font-size:20px;
+    margin-bottom:20px
+}
+.f_list{
+    color:#843838;
+    margin-top: 8px;
+}

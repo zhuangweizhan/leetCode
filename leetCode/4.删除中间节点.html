@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>个人leet code练习</title>
+        <script src="./src/index.js" ></script>
+        <link href="./src/index.css"  type='text/css'  rel='stylesheet'/>
+    </head>
+    <body>
+        <div class="page">
+            <div class="header">(4)删除中间节点</div>
+            <div class="address">https://leetcode-cn.com/problems/delete-middle-node-lcci/</div>
+            <div class="detail">
+                实现一种算法，删除单向链表中间的某个节点（即不是第一个或最后一个节点），假定你只能访问该节点。
+            </div>
+
+            <div class="detail">
+                输入：单向链表a->b->c->d->e->f中的节点c
+                结果：不返回任何数据，但该链表变为a->b->d->e->f
+            </div>
+
+            <div class="tip">查看源码可看题解</div>
+        </div>
+    </body>
+    <script>
+        const node = "a->b->c->d->e->f";
+
+        var deleteNode = function(node) {
+            node.val = node.next.val
+            node.next = node.next.next
+        };
+
+        // alert(deleteNode(node));
+
+    </script>
+</html>

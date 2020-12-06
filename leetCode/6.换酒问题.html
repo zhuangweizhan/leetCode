@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>个人leet code练习</title>
+        <script src="./src/index.js" ></script>
+        <link href="./src/index.css"  type='text/css'  rel='stylesheet'/>
+    </head>
+    <body>
+        <div class="page">
+            <div class="header">(6)换酒问题</div>
+            <div class="address">https://leetcode-cn.com/problems/water-bottles/</div>
+            <div class="detail">
+                小区便利店正在促销，用 numExchange 个空酒瓶可以兑换一瓶新酒。你购入了 numBottles 瓶酒。
+                如果喝掉了酒瓶中的酒，那么酒瓶就会变成空的。
+                请你计算 最多 能喝到多少瓶酒。
+            </div>
+
+            <div class="detail">
+                输入：numBottles = 9, numExchange = 3
+                输出：13
+                解释：你可以用 3 个空酒瓶兑换 1 瓶酒。
+            </div>
+
+            <div class="tip">查看源码可看题解</div>
+        </div>
+    </body>
+    <script>
+        
+        const numBottles =  9;
+        const numExchange = 3
+
+        var numWaterBottles_0 = function(numBottles, numExchange) {
+            let all = numBottles;
+            function add ( numBottles, numExchange){
+                if ( numBottles >=  numExchange ){
+                    all += Math.floor(numBottles/numExchange);
+                    add( numBottles/numExchange, numExchange)
+                }
+            }
+            add( numBottles, numExchange );
+            return all;
+        };
+
+        var numWaterBottles = function (numBottles, numExchange) {
+            var count = numBottles;
+            while(numBottles >= numExchange){
+                count += Math.floor( numBottles/numExchange);
+                numBottles = Math.floor( numBottles/numExchange) + numBottles%numExchange
+            }
+            return count;
+        };
+
+
+        // alert(numWaterBottles(numBottles, numExchange));
+
+    </script>
+</html>
